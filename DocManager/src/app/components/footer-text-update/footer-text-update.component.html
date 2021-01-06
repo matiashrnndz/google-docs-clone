@@ -1,0 +1,23 @@
+<div class="user-add-content" template="data.text">
+    <mat-card>
+        <mat-card-content>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off">
+                <p>Adding a new text</p>
+                <mat-form-field class="full-width-input">
+                    <input matInput placeholder="textcontent" formControlName="textcontent">
+                </mat-form-field>
+                <div class="style-class-selection">
+                    <mat-form-field class='style-class-select'>
+                        <mat-select placeholder="Style" [(value)]="styleClassName">
+                            <mat-option *ngFor="let styleClass of styleClasses" [value]="styleClass.Name">
+                                {{ styleClass.Name }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <button mat-raised-button type="submit">Save</button>
+                <button mat-raised-button (click)="cancel()">Cancel</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

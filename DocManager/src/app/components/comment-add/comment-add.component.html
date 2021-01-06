@@ -1,0 +1,19 @@
+<div class="comment-add-content" template="data.documentId">
+    <mat-card>
+        <mat-card-content>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off">
+                <p>Comment : </p>
+                <mat-form-field class="full-width-input">
+                    <input matInput placeholder="text" formControlName="text" required>
+                </mat-form-field>
+                <mat-form-field class="full-width-input">
+                    <input matInput type='number' min="0" max="5" placeholder="rating" formControlName="rating" required>
+                </mat-form-field>
+                <div>
+                    <button mat-raised-button type="submit">Save</button>
+                    <button mat-raised-button (click)="closeDialog()">Cancel</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

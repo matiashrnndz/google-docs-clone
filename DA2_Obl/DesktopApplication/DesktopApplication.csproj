@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2AC79826-A4AC-46E9-86A2-B8149D32EDDF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DesktopApplication</RootNamespace>
+    <AssemblyName>DesktopApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\Domain\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\Domain\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\Domain\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ManageFormat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageFormat.Designer.cs">
+      <DependentUpon>ManageFormat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageStyle.Designer.cs">
+      <DependentUpon>ManageStyle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditStyleClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditStyleClass.Designer.cs">
+      <DependentUpon>EditStyleClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImporterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImporterControl.Designer.cs">
+      <DependentUpon>ImporterControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoggerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoggerControl.Designer.cs">
+      <DependentUpon>LoggerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageFormats.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManageFormats.Designer.cs">
+      <DependentUpon>ManageFormats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageStyleClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageStyleClass.Designer.cs">
+      <DependentUpon>ManageStyleClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Login.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ManageFormat.resx">
+      <DependentUpon>ManageFormat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageStyle.resx">
+      <DependentUpon>ManageStyle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditStyleClass.resx">
+      <DependentUpon>EditStyleClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImporterControl.resx">
+      <DependentUpon>ImporterControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoggerControl.resx">
+      <DependentUpon>LoggerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageFormats.resx">
+      <DependentUpon>ManageFormats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageStyleClass.resx">
+      <DependentUpon>ManageStyleClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Exception\Exception.csproj">
+      <Project>{fcfa0aa5-35fc-4a43-ac62-61182a8e601f}</Project>
+      <Name>Exception</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FormatImporter\FormatImporter.csproj">
+      <Project>{330e12a2-4473-435f-beea-a179aa3b8853}</Project>
+      <Name>FormatImporter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RepositoryFactory\RepositoryFactory.csproj">
+      <Project>{bad4feae-b5f6-40c1-b973-76fca30cffaa}</Project>
+      <Name>RepositoryFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <Project>{b6e5e5a9-5e7c-44b0-be57-32d10f030486}</Project>
+      <Name>Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceFactory\ServiceFactory.csproj">
+      <Project>{74775ff4-61e3-45fe-9e1a-0d7079020fb5}</Project>
+      <Name>ServiceFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{b4f5351e-6aef-46a4-b007-0c4ff42709f9}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain\Domain.csproj">
+      <Project>{c439c0b1-751c-4e7a-8b21-aa8b71366072}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

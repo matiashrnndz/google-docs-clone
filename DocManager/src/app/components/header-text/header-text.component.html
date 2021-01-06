@@ -1,0 +1,14 @@
+<mat-card class="header-text-card">
+    <div *ngIf="hasText()">
+        <div>
+            <textarea class='text-area' [readonly]="true" matInput placeholder="">{{text.TextContent}}</textarea>
+        </div>
+        <div class="text-buttons">
+            <button *ngIf="hasText()" class="update-button" mat-raised-button (click)="openEditDialog()">EDIT</button>
+            <button *ngIf="hasText()" class="delete-button" mat-raised-button (click)="onDelete()">DELETE</button>
+        </div>
+    </div>
+    <div *ngIf="notHasText()">
+        <button *ngIf="notHasText()" class="add-button" mat-raised-button (click)="openAddDialog()">ADD</button>
+    </div>
+</mat-card>

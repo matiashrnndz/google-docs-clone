@@ -1,0 +1,30 @@
+<mat-card class="document-card">
+    <mat-accordion multi="true">
+        <mat-expansion-panel [disabled]="true">
+            <mat-expansion-panel-header class='title-panel'>{{document.Title}} by {{document.Creator.Name}} {{document.Creator.LastName}}</mat-expansion-panel-header>
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>HEADER</mat-expansion-panel-header>
+            <app-header [documentId]=documentId></app-header>
+        </mat-expansion-panel>
+        <div *ngFor="let paragraph of paragraphs">
+            <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header>PARAGRAPH {{paragraph.Position}}</mat-expansion-panel-header>
+                <div>
+                    <app-paragraph-text-list [paragraphId]=paragraph.Id></app-paragraph-text-list>
+                </div>
+                <div class="paragraph-buttons">
+                    <button class="update-button" mat-raised-button (click)="openParagraphEditDialog(paragraph.Id)">EDIT</button>
+                    <button class="delete-button" mat-raised-button (click)="onParagraphDelete(paragraph.Id)">DELETE</button>
+                </div>
+            </mat-expansion-panel>
+        </div>
+        <div>
+            <button class="add-button" mat-raised-button (click)="onParagraphAdd()">ADD</button>
+        </div>
+        <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>FOOTER</mat-expansion-panel-header>
+            <app-footer [documentId]=documentId></app-footer>
+        </mat-expansion-panel>
+    </mat-accordion>
+</mat-card>

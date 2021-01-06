@@ -1,0 +1,16 @@
+.mainnav-container {
+  height: 100%;
+}
+
+.mainnav {
+  width: 200px;
+  box-shadow: 3px 0 6px rgba(0,0,0,.24);
+}
+
+.mat-toolbar {
+    justify-content: space-between;
+}
+
+.mat-drawer {
+    background: rgb(250, 250, 250);
+}

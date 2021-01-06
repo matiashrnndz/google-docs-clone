@@ -1,0 +1,26 @@
+<div class="paragraph-update-content" template="data.paragraph">
+    <mat-card>
+        <mat-card-content>
+            <div>
+                <form [formGroup]="form" (ngSubmit)="onSave()" autocomplete="off">
+                    <mat-form-field class="full-width-input">
+                        <input matInput type="number" placeholder="position" formControlName="position" required>
+                    </mat-form-field>
+                </form>
+            </div>
+            <div class="style-class-selection">
+                <mat-form-field class='style-class-select'>
+                    <mat-select placeholder="Style" [(value)]="styleClassName">
+                        <mat-option *ngFor="let styleClass of styleClasses" [value]="styleClass.Name">
+                            {{ styleClass.Name }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button (click)="onSave()">SAVE</button>
+            <button mat-raised-button (click)="closeDialog()">CANCEL</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

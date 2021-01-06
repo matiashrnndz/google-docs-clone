@@ -1,0 +1,29 @@
+<mat-card class="document-visualizer-header-card">
+    <mat-card-content>
+        <mat-card-header>
+            <mat-card-title> Select the format to apply </mat-card-title>
+        </mat-card-header>
+
+        <div class="format-selection">
+            <mat-form-field class='format-select'>
+                <mat-select [(value)]="currentFormatName">
+                    <mat-option *ngFor="let format of formats" [value]="format.Name">
+                        {{ format.Name }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <mat-card-actions>
+            <button class="view-button" mat-raised-button (click)="onView()">VIEW</button>
+        </mat-card-actions>
+    </mat-card-content>
+</mat-card>
+
+<mat-card class="document-visualizer-card">
+    <mat-card-content>
+        <mat-card-header>
+            <mat-card-title> Visualization </mat-card-title>
+        </mat-card-header>
+        <div [innerHTML]="this.visualization | sanitizeHtml" ></div>
+    </mat-card-content>
+</mat-card>

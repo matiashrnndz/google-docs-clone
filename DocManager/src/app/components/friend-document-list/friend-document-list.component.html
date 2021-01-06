@@ -1,0 +1,11 @@
+<mat-card class="document-card" *ngFor="let document of documents">
+    <mat-card-header>
+        <mat-card-title>{{document.Title}}</mat-card-title>
+        <mat-card-subtitle>{{document.CreationDate}}</mat-card-subtitle>
+    </mat-card-header>
+    <div>
+        <button mat-raised-button (click)="onView(document.Id)">VIEW</button>
+        <button mat-raised-button (click)="onComments(document.Id)">COMMENTS</button>
+    </div>
+    <mat-divider></mat-divider>
+</mat-card>

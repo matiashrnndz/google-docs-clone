@@ -1,0 +1,16 @@
+<div class="friend-invite-content">
+    <mat-card>
+        <mat-card-content>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off">
+                <p> Invite a friend : </p>
+                <mat-form-field class="full-width-input">
+                    <input matInput placeholder="email" formControlName="email" required>
+                </mat-form-field>
+                <div>
+                    <button mat-raised-button type="submit">Save</button>
+                    <button mat-raised-button (click)="closeDialog()">Cancel</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

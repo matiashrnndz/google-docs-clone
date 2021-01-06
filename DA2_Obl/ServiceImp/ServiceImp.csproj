@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1973537-6501-4611-AD24-9575D39DEC76}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ServiceImp</RootNamespace>
+    <AssemblyName>ServiceImp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthenticationService.cs" />
+    <Compile Include="CommentService.cs" />
+    <Compile Include="DocumentCreationByUserGraphService.cs" />
+    <Compile Include="DocumentManagementService.cs" />
+    <Compile Include="DocumentModificationByUserGraphService.cs" />
+    <Compile Include="DocumentModificationLogService.cs" />
+    <Compile Include="FooterManagementService.cs" />
+    <Compile Include="FormatManagementService.cs" />
+    <Compile Include="FriendRequestManagementService.cs" />
+    <Compile Include="GenericStyleBuilder.cs" />
+    <Compile Include="HeaderManagementService.cs" />
+    <Compile Include="HTMLGenerator.cs" />
+    <Compile Include="LoggingService.cs" />
+    <Compile Include="LogInService.cs" />
+    <Compile Include="ParagraphManagementService.cs" />
+    <Compile Include="ServiceHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SessionService.cs" />
+    <Compile Include="StyleClassManagementService.cs" />
+    <Compile Include="StyleHTML.cs" />
+    <Compile Include="StyleHTMLBuilder.cs" />
+    <Compile Include="StyleManagementService.cs" />
+    <Compile Include="TextManagementService.cs" />
+    <Compile Include="TopsService.cs" />
+    <Compile Include="UserManagementService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain\Domain.csproj">
+      <Project>{c439c0b1-751c-4e7a-8b21-aa8b71366072}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Exception\Exception.csproj">
+      <Project>{FCFA0AA5-35FC-4A43-AC62-61182A8E601F}</Project>
+      <Name>Exception</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RepositoryFactory\RepositoryFactory.csproj">
+      <Project>{bad4feae-b5f6-40c1-b973-76fca30cffaa}</Project>
+      <Name>RepositoryFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <Project>{B6E5E5A9-5E7C-44B0-BE57-32D10F030486}</Project>
+      <Name>Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{B4F5351E-6AEF-46A4-B007-0C4FF42709F9}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

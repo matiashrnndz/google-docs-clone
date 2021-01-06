@@ -1,0 +1,43 @@
+<mat-card class="user-card">
+        <mat-card-actions class="invite-card">
+            <button class="invite-button" mat-raised-button (click)="openInviteDialog()">SEND FRIEND REQUEST</button>
+        </mat-card-actions>
+        <mat-divider></mat-divider>
+    </mat-card>
+<mat-card class="user-card">
+        <mat-card-header>
+            <mat-card-title class='friends-title'>FRIENDS</mat-card-title>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+    </mat-card>
+
+<mat-card class="user-card" *ngFor="let friend of friends">
+    <mat-card-header>
+        <mat-card-title>{{friend.Name}} {{friend.LastName}}</mat-card-title>
+        <mat-card-subtitle>{{friend.Email}}</mat-card-subtitle>
+        <mat-card-subtitle *ngIf="friend.Administrator == true">Administrator</mat-card-subtitle>
+        <mat-card-subtitle *ngIf="friend.Administrator == false">Editor</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions>
+        <button class="documents-button" mat-raised-button (click)="onDocuments(friend.Email)">DOCUMENTS</button>
+        <button class="delete-button" mat-raised-button color=primary (click)="onReject(friend.Email)">DELETE</button>
+    </mat-card-actions>
+    <mat-divider></mat-divider>
+</mat-card>
+<mat-card class="user-card">
+    <mat-card-header>
+        <mat-card-title class='friend-requests-title'>FRIEND REQUESTS</mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+</mat-card>
+<mat-card class="user-card" *ngFor="let pending of friendRequests">
+    <mat-card-header>
+        <mat-card-title>{{pending.Name}} {{pending.LastName}}</mat-card-title>
+        <mat-card-subtitle>{{pending.Email}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions>
+            <button class="accept-button" mat-raised-button (click)="onAccept(pending.Email)">ACCEPT</button>
+            <button class="cancel-button" mat-raised-button (click)="onReject(pending.Email)">REJECT</button>
+        </mat-card-actions>
+    <mat-divider></mat-divider>
+</mat-card>

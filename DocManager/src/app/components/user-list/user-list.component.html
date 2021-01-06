@@ -1,0 +1,17 @@
+<mat-card class="user-card">
+    <mat-card-actions>
+        <button class="view-button" mat-raised-button (click)="openAddDialog()">ADD</button>
+    </mat-card-actions>
+    <mat-divider></mat-divider>
+</mat-card>
+<mat-card class="user-card" *ngFor="let user of users">
+    <mat-card-header>
+        <mat-card-title>{{user.Name}} {{user.LastName}}</mat-card-title>
+        <mat-card-subtitle>{{user.Email}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions>
+        <button class="update-button" mat-raised-button (click)="openUpdateDialog(user.Email)">VIEW</button>
+        <button class="delete-button" mat-raised-button color="primary" (click)="onDelete(user.Email)">DELETE</button>
+    </mat-card-actions>
+    <mat-divider></mat-divider>
+</mat-card>

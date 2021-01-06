@@ -1,0 +1,12 @@
+<div *ngIf="hasFooter()">
+    <div>
+        <app-footer-text [footerId]=footer.Id></app-footer-text>
+    </div>
+    <div class="footer-buttons">
+        <button *ngIf="hasFooter()" class="update-button" mat-raised-button (click)="openEditDialog()">EDIT</button>
+        <button *ngIf="hasFooter()" class="delete-button" mat-raised-button (click)="onDelete()">DELETE</button>
+    </div>
+</div>
+<div *ngIf="notHasFooter()">
+    <button *ngIf="notHasFooter()" class="add-button" mat-raised-button (click)="onFooterAdd()">ADD</button>
+</div>

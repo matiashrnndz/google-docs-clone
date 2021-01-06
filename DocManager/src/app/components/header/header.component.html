@@ -1,0 +1,12 @@
+<div *ngIf="hasHeader()">
+    <div>
+        <app-header-text [headerId]=header.Id></app-header-text>
+    </div>
+    <div class="header-buttons">
+        <button *ngIf="hasHeader()" class="update-button" mat-raised-button (click)="openEditDialog()">EDIT</button>
+        <button *ngIf="hasHeader()" class="delete-button" mat-raised-button (click)="onDelete()">DELETE</button>
+    </div>
+</div>
+<div *ngIf="notHasHeader()">
+    <button *ngIf="notHasHeader()" class="add-button" mat-raised-button (click)="onHeaderAdd()">ADD</button>
+</div>

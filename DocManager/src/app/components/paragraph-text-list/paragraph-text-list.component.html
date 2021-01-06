@@ -1,0 +1,19 @@
+<mat-accordion multi="true">
+    <div *ngIf="hasText()">
+        <div class="paragraph-list" *ngFor="let text of texts">
+            <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header>TEXT {{text.Position}}</mat-expansion-panel-header>
+                <textarea class='text-area' [readonly]="true" matInput placeholder="">{{text.TextContent}}</textarea>
+                <div class="text-buttons">
+                    <button class="update-button" mat-raised-button (click)="openEditDialog(text)">EDIT</button>
+                    <button class="delete-button" mat-raised-button (click)="onDelete()">DELETE</button>
+                </div>
+            </mat-expansion-panel>
+        </div>
+    </div>
+    <div>
+        <mat-card class="paragraph-text-card">
+            <button class="add-button" mat-raised-button (click)="openAddDialog()">ADD</button>
+        </mat-card>
+    </div>
+</mat-accordion>

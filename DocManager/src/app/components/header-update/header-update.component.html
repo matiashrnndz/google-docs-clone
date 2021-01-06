@@ -1,0 +1,19 @@
+<div class="header-update-content" template="data.header">
+    <mat-card>
+        <mat-card-content>
+            <div class="style-class-selection">
+                <mat-form-field class='style-class-select'>
+                    <mat-select placeholder="Style" [(value)]="styleClassName">
+                        <mat-option *ngFor="let styleClass of styleClasses" [value]="styleClass.Name">
+                            {{ styleClass.Name }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button (click)="onSave()">SAVE</button>
+            <button mat-raised-button (click)="closeDialog()">CANCEL</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

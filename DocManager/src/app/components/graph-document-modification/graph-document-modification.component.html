@@ -1,0 +1,37 @@
+<mat-card class="graph-card">
+    <div>
+        <h1>{{title}}</h1>
+        <fusioncharts [id]="id" [width]="width" [height]="height" [type]="type" [dataFormat]="dataFormat" [dataSource]="dataSource"></fusioncharts>
+    </div>
+    <mat-divider></mat-divider>
+</mat-card>
+
+<mat-card class="header-card">
+    <p>
+        <mat-form-field>
+            <input matInput [matDatepicker]="dp3" placeholder="Starting Date" disabled [(ngModel)]="startingDate">
+            <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+            <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input matInput [matDatepicker]="dp2" placeholder="Latest Date" disabled [(ngModel)]="lastestDate">
+            <mat-datepicker-toggle matSuffix [for]="dp2"></mat-datepicker-toggle>
+            <mat-datepicker #dp2 disabled="false"></mat-datepicker>
+        </mat-form-field>
+    </p>
+    <div class="user-selection">
+        <mat-form-field class='user-select'>
+            <mat-select placeholder="User" [(value)]="currentUserEmail">
+                <mat-option *ngFor="let user of users" [value]="user.Email">
+                    {{ user.Email }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <mat-card-actions>
+        <button class="graph-button" mat-raised-button (click)="onGraph()">GRAPH</button>
+    </mat-card-actions>
+    <mat-divider></mat-divider>
+</mat-card>
